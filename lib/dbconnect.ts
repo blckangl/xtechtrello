@@ -1,4 +1,3 @@
-// /lib/dbConnect.js
 import * as mongoose from "mongoose";
 
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -11,7 +10,6 @@ if (!MONGODB_URI) {
 let database: mongoose.Connection;
 
 export const mongooseConnection = async (): Promise<mongoose.Connection> => {
-  // add your own uri below
   if (database) {
     return database;
   }
