@@ -1,3 +1,4 @@
+import NavHeader from "components/nav-header";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { normalize } from "styled-normalize";
 
@@ -18,7 +19,10 @@ const Layout = ({ children }: { children: any }) => {
   return (
     <>
       <GlobalStyle />
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <NavHeader />
+        {children}
+      </ThemeProvider>
     </>
   );
 };
