@@ -3,15 +3,24 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { normalize } from "styled-normalize";
 
 export const GlobalStyle = createGlobalStyle` 
-  ${normalize}
-
-body {
-  padding: 0;
-}
+   ${normalize}
+  html {
+  box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+    padding: 0;
+    margin:0;  }
+  body {
+    padding: 0;
+  }
 `;
 const theme = {
   colors: {
-    primary: "#fafafa",
+    primary: "#f4f4f4",
+    secondary: "#A8A8A8",
+    text_primary: "#000",
+    text_secondary: "#929292",
   },
 };
 

@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styled from "styled-components";
 import Layout from "layout/Layout";
+import BoardList from "components/board-list";
 
 const Home: NextPage = () => {
   return (
@@ -14,7 +15,10 @@ const Home: NextPage = () => {
       </Head>
 
       <Layout>
-        <main>Hello</main>
+        <main>
+          <BoardList title="Recently viewed" />
+          <BoardList title="process" />
+        </main>
       </Layout>
     </div>
   );
