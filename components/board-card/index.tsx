@@ -4,10 +4,10 @@ import { capitalize } from "utils/string_utilities";
 import { Card, CardHeader, CardFooter } from "./board-card.styles";
 
 import Path from "public/images/Path@2x.png";
+import { BoardCardProps } from "interfaces/prop.types";
+import StackedProfiles from "components/shared/stacked-profiles";
 const src = `https://via.placeholder.com/200`;
-interface BoardCardProps {
-  profiles: number;
-}
+
 const BoardCard: React.FC<BoardCardProps> = ({ profiles }: BoardCardProps) => {
   return (
     <Card>
@@ -17,59 +17,12 @@ const BoardCard: React.FC<BoardCardProps> = ({ profiles }: BoardCardProps) => {
           {capitalize("saving money - is something we would all like")}
         </p>
       </CardHeader>
-      <CardFooter profiles={profiles}>
-        <div className="profiles">
-          <div className="profile">
-            <Image
-              width="30"
-              height="30"
-              loader={() => src}
-              src={src}
-              unoptimized={true}
-              alt="profile picture"
-            />
-          </div>
-          <div className="profile">
-            <Image
-              width={30}
-              height={30}
-              loader={() => src}
-              src={src}
-              unoptimized={true}
-              alt="profile picture"
-            />
-          </div>
-          <div className="profile">
-            <Image
-              width={30}
-              height={30}
-              loader={() => src}
-              src={src}
-              unoptimized={true}
-              alt="profile picture"
-            />
-          </div>
-          <div className="profile">
-            <Image
-              width={30}
-              height={30}
-              loader={() => src}
-              src={src}
-              unoptimized={true}
-              alt="profile picture"
-            />
-          </div>
-          <div className="profile">
-            <Image
-              width={30}
-              height={30}
-              loader={() => src}
-              src={src}
-              unoptimized={true}
-              alt="profile picture"
-            />
-          </div>
-        </div>
+      <CardFooter>
+        <StackedProfiles
+          profiles={["aze", "aa", "ss", "cc", "za", "az"]}
+          maxStacked={3}
+        />
+
         <div className="action">
           <a href="#">
             <Image

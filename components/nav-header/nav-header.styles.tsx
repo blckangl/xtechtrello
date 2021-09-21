@@ -32,19 +32,7 @@ export const LogoItem = styled.a`
     display: none;
   }
 `;
-export const Divider = styled.span`
-  display: inline-block;
-  height: 32px;
-  width: 1px;
-  background-color: hsla(0, 0%, 0%, 0.1);
-  margin-left: 20px;
-  margin-right: 20px;
-  @media only screen and (max-width: 768px) {
-    background-color: transparent;
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-`;
+
 export const Title = styled.span`
   margin-left: 5px;
   @media only screen and (max-width: 768px) {

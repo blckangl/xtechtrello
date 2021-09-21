@@ -1,6 +1,5 @@
 import {
   Container,
-  Divider,
   InnerContainer,
   Input,
   LeftInnerContainer,
@@ -12,8 +11,8 @@ import {
   SearchContainer,
   Title,
 } from "./nav-header.styles";
+import { Divider } from "components/shared/styles";
 import Image from "next/image";
-import { NextComponentType } from "next";
 
 import Logo from "public/images/Logo.png";
 import Boards from "public/images/Boards.png";
@@ -34,12 +33,12 @@ const NavHeader: React.FC = () => {
           <Image src={Logo} alt="trello logo" />
         </LogoItem>
 
-        <Divider />
+        <Divider hideOnMobile margin={20} />
         <Mark>
           <Image layout="fill" src={TrelloMark} alt="trello mark" />
         </Mark>
         <Title>Boards</Title>
-        <Divider />
+        <Divider hideOnMobile margin={20} />
         <SearchContainer>
           <Input placeholder="search" />
           <SearchButton href="#">

@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "eva-icons": "^1.1.3",
     "mongoose": "^6.0.6",
     "next": "11.1.2",
     "react": "17.0.2",
