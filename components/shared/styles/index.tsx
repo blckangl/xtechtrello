@@ -21,3 +21,12 @@ export const Divider = styled("span")<{
   }
   `}
 `;
+
+export const TaskType = styled("span")<{ color: string }>`
+  width: 60px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: ${(props) => props.color};
+  display: inline-block;
+  margin-right: 8px;
+`;

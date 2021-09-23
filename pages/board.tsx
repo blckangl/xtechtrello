@@ -4,6 +4,7 @@ import { useEffect } from "react";
 // @ts-ignore
 import * as eva from "eva-icons";
 import BoardHeader from "components/board-header";
+import TaskList from "components/task-list";
 const BoardPage: NextPage = () => {
   useEffect(() => {
     eva.replace();
@@ -16,6 +17,7 @@ const BoardPage: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <BoardHeader />
+      <TaskList />
     </div>
   );
 };

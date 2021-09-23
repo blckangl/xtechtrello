@@ -1,4 +1,3 @@
-import { NextComponentType } from "next";
 import { Container, Title, List } from "./board-list.styles";
 import BoardCard from "components/board-card";
 import CardEmpty from "components/board-card-empty";

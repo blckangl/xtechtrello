@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
+
 import { capitalize } from "utils/string_utilities";
 import { Card, CardHeader, CardFooter } from "./board-card.styles";
 
 import Path from "public/images/Path@2x.png";
 import { BoardCardProps } from "interfaces/prop.types";
 import StackedProfiles from "components/shared/stacked-profiles";
-const src = `https://via.placeholder.com/200`;
 
 const BoardCard: React.FC<BoardCardProps> = ({ profiles }: BoardCardProps) => {
   return (
