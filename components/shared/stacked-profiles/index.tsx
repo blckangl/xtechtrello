@@ -26,8 +26,8 @@ const StackedProfiles: React.FC<StackedProfiles> = ({
             <Image
               width={30}
               height={30}
-              loader={() => src}
-              src={src}
+              loader={() => profile}
+              src={profile}
               unoptimized={true}
               alt="profile picture"
             />

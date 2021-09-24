@@ -28,6 +28,7 @@ export const LeftInnerContainer = styled(InnerContainer)`
   flex-grow: 1;
 `;
 export const LogoItem = styled.a`
+  cursor: pointer;
   @media only screen and (max-width: 768px) {
     display: none;
   }

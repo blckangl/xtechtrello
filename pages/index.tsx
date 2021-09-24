@@ -1,10 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import styled from "styled-components";
 import BoardList from "components/board-list";
-
-const Home: NextPage = () => {
+import { Board } from "interfaces/board.model";
+import { server } from "config";
+const Home: NextPage<{ boards: Board[] }> = ({ boards }) => {
   return (
     <div>
       <Head>
@@ -14,11 +13,17 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <BoardList title="Recently viewed" />
-        <BoardList title="process" />
+        <BoardList boards={boards} title="Recently viewed" />;
+        <BoardList boards={boards} title="New" />;
+        <BoardList boards={boards} title="Process" />;
+        <BoardList boards={boards} title="Completed" />;
       </main>
     </div>
   );
 };
-
+Home.getInitialProps = async () => {
+  const res = await fetch(`${server}/api/boards`);
+  const json = await res.json();
+  return { boards: json?.success ? json.body : [] };
+};
 export default Home;

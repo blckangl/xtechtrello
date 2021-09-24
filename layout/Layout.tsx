@@ -1,4 +1,5 @@
 import NavHeader from "components/nav-header";
+import { useEffect } from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { normalize } from "styled-normalize";
 
@@ -25,6 +26,7 @@ const theme = {
 };
 
 const Layout = ({ children }: { children: any }) => {
+  useEffect(() => {}, []);
   return (
     <>
       <GlobalStyle />

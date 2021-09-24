@@ -30,3 +30,16 @@ export const TaskType = styled("span")<{ color: string }>`
   display: inline-block;
   margin-right: 8px;
 `;
+
+export const ErrorMessage = styled("div")`
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+  }
+`;

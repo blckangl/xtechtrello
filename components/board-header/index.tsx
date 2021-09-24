@@ -4,14 +4,16 @@ import { Container } from "./board-header.styles";
 // @ts-ignore
 import * as eva from "eva-icons";
 import { Divider } from "components/shared/styles";
-const BoardHeader: React.FC = () => {
+import { Board } from "interfaces/board.model";
+import { capitalize } from "utils/string_utilities";
+const BoardHeader: React.FC<{ board: Board }> = ({ board }) => {
   useEffect(() => {
     eva.replace();
   }, []);
   return (
     <Container>
       <div className="title">
-        <p>Brackets</p>
+        <p>{capitalize(board.title)}</p>
       </div>
       <div className="status">
         <a href="#">
@@ -24,13 +26,22 @@ const BoardHeader: React.FC = () => {
         </a>
         <Divider margin={10} />
         <a href="#">
-          <i
-            data-eva-height="19"
-            data-eva-fill="#cbcbcb"
-            data-eva="globe-2-outline"
-            data-eva-hover="true"
-          />
-          <small>Public</small>
+          {board.isPrivate ? (
+            <i
+              data-eva-height="19"
+              data-eva-fill="#cbcbcb"
+              data-eva="lock-outline"
+              data-eva-hover="true"
+            />
+          ) : (
+            <i
+              data-eva-height="19"
+              data-eva-fill="#cbcbcb"
+              data-eva="globe-2-outline"
+              data-eva-hover="true"
+            />
+          )}
+          <small>{board.isPrivate ? "Private" : "Public"}</small>
         </a>
         <Divider margin={10} />
         <a href="#">
@@ -43,7 +54,10 @@ const BoardHeader: React.FC = () => {
         </a>
       </div>
       <div className="actions">
-        <StackedProfiles profiles={["aze", "aa", "ss", "cc"]} maxStacked={2} />
+        <StackedProfiles
+          profiles={board.users.map((user) => user.avatar)}
+          maxStacked={2}
+        />
       </div>
     </Container>
   );

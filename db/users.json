@@ -1,0 +1,106 @@
+[{
+  "_id": {
+    "$oid": "614cf75a2f468322d5c8ae92"
+  },
+  "name": "foulen ben foulen",
+  "email": "foulen@foulen.com",
+  "avatar": "https://randomuser.me/api/portraits/women/40.jpg",
+  "password": "$2a$10$GARvNXmhi4NYqQRVcfNGuek1XTkoHN94S4ZzeTVKqRTWSpy7CCfsW",
+  "created_at": {
+    "$date": "2021-09-23T21:53:30.082Z"
+  },
+  "updated_at": {
+    "$date": "2021-09-23T21:53:30.082Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "614cf84565b49ebec44e2b5b"
+  },
+  "name": "foulena ben foulean",
+  "email": "foulena@foulen.com",
+  "avatar": "https://randomuser.me/api/portraits/women/26.jpg",
+  "password": "$2a$10$LOYUfup./sGqoju.ScnC4e2WA68RqoBVMI7Cl9nVPFvXuhJ1owZOi",
+  "created_at": {
+    "$date": "2021-09-23T21:57:25.601Z"
+  },
+  "updated_at": {
+    "$date": "2021-09-23T21:57:25.601Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "614cfa567e47001b29e0fa79"
+  },
+  "name": "med hamza",
+  "email": "hamza@gmail.com",
+  "avatar": "https://randomuser.me/api/portraits/men/15.jpg",
+  "password": "$2a$10$3Q5Q8TSUFXR7YQ214rJYbO7PsFxqAlXvKAFur9D7GHd6UVAMglMgq",
+  "created_at": {
+    "$date": "2021-09-23T22:06:14.810Z"
+  },
+  "updated_at": {
+    "$date": "2021-09-23T22:06:14.810Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "614d0551a2cdbe9d86f5e035"
+  },
+  "name": "akali akali",
+  "email": "akali@gmail.com",
+  "avatar": "https://randomuser.me/api/portraits/women/15.jpg",
+  "password": "$2a$10$3OlCSpJOWTIfXj.Dg2SLO.TvbPMByHJ0CeMkjkkiw7fJ9AuvDT6P6",
+  "created_at": {
+    "$date": "2021-09-23T22:53:05.320Z"
+  },
+  "updated_at": {
+    "$date": "2021-09-23T22:53:05.320Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "614d057ea2cdbe9d86f5e037"
+  },
+  "name": "naruto uzumaki",
+  "email": "naruto@gmail.com",
+  "avatar": "https://randomuser.me/api/portraits/men/5.jpg",
+  "password": "$2a$10$P2Aby8XSGeNb8HIwza32EerDvBXvNvPNC0yg19JCMfth8rHLj9oMC",
+  "created_at": {
+    "$date": "2021-09-23T22:53:50.738Z"
+  },
+  "updated_at": {
+    "$date": "2021-09-23T22:53:50.738Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "614d058fa2cdbe9d86f5e039"
+  },
+  "name": "rimuru tempest",
+  "email": "rimuru@gmail.com",
+  "avatar": "https://randomuser.me/api/portraits/men/30.jpg",
+  "password": "$2a$10$dwXmOvEV0CPp2vpV.Zg4eeTEpsfmQA5Rp5RbBFNlK3JYJlCPufvcm",
+  "created_at": {
+    "$date": "2021-09-23T22:54:07.076Z"
+  },
+  "updated_at": {
+    "$date": "2021-09-23T22:54:07.076Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "614d059ca2cdbe9d86f5e03b"
+  },
+  "name": "sonia sebsi",
+  "email": "sonia@gmail.com",
+  "avatar": "https://randomuser.me/api/portraits/women/28.jpg",
+  "password": "$2a$10$cVNwvtMo9IrYUA35oeFkoez0K9/CsTvSl7rXZwlNeRn8tx.9Glq9y",
+  "created_at": {
+    "$date": "2021-09-23T22:54:20.930Z"
+  },
+  "updated_at": {
+    "$date": "2021-09-23T22:54:20.930Z"
+  },
+  "__v": 0
+}]

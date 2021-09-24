@@ -1,0 +1,65 @@
+[{
+  "_id": {
+    "$oid": "614cfeffcc32426bd12c8b51"
+  },
+  "title": "Brackets",
+  "description": "Saving money – is something we would all like.",
+  "isPrivate": true,
+  "users": [
+    {
+      "$oid": "614cf84565b49ebec44e2b5b"
+    },
+    {
+      "$oid": "614cf75a2f468322d5c8ae92"
+    },
+    {
+      "$oid": "614d059ca2cdbe9d86f5e03b"
+    },
+    {
+      "$oid": "614d058fa2cdbe9d86f5e039"
+    },
+    {
+      "$oid": "614d057ea2cdbe9d86f5e037"
+    }
+  ],
+  "sections": [
+    {
+      "$oid": "614d1cbfa2cdbe9d86f5e0a6"
+    },
+    {
+      "$oid": "614d1d3fa2cdbe9d86f5e0af"
+    },
+    {
+      "$oid": "614d1d4ba2cdbe9d86f5e0b3"
+    },
+    {
+      "$oid": "614d1d5ea2cdbe9d86f5e0b7"
+    },
+    {
+      "$oid": "614d1d62a2cdbe9d86f5e0bb"
+    }
+  ],
+  "created_at": {
+    "$date": "2021-09-23T22:26:07.232Z"
+  },
+  "updated_at": {
+    "$date": "2021-09-24T00:35:46.135Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "614d0b76a2cdbe9d86f5e048"
+  },
+  "title": "Telescopes 101",
+  "description": "The beauty of astronomy is that anybody can do it. From the tiniest baby to the most.",
+  "isPrivate": false,
+  "users": [],
+  "sections": [],
+  "created_at": {
+    "$date": "2021-09-23T23:19:18.038Z"
+  },
+  "updated_at": {
+    "$date": "2021-09-23T23:19:18.038Z"
+  },
+  "__v": 0
+}]

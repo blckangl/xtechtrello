@@ -13,6 +13,8 @@ export const Container = styled.div`
   padding-right: 30px;
   padding-top: 16px;
   flex-direction: column;
+  flex-shrink: 0;
+  min-height: 90vh;
   @media only screen and (max-width: 768px) {
     width: 100%;
   }

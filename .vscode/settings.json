@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/d2543d79-b34b-4889-8531-dc5f406ebcc6/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/xtechtrello",
+  "appService.deploySubpath": "."
+}

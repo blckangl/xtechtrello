@@ -22,6 +22,7 @@ import plusCircle from "public/images/plus-circle-outline@2x.png";
 import Search from "public/images/search-outline@2x.png";
 import TrelloMark from "public/images/trello-mark-blue@2x.png";
 import React from "react";
+import Link from "next/link";
 
 const src = `https://via.placeholder.com/300`;
 
@@ -29,13 +30,18 @@ const NavHeader: React.FC = () => {
   return (
     <Container>
       <LeftInnerContainer>
-        <LogoItem>
-          <Image src={Logo} alt="trello logo" />
-        </LogoItem>
-
+        <Link href="/">
+          <LogoItem>
+            <Image src={Logo} alt="trello logo" />
+          </LogoItem>
+        </Link>
         <Divider hideOnMobile margin={20} />
         <Mark>
-          <Image layout="fill" src={TrelloMark} alt="trello mark" />
+          <Link href="/">
+            <a>
+              <Image layout="fill" src={TrelloMark} alt="trello mark" />
+            </a>
+          </Link>
         </Mark>
         <Title>Boards</Title>
         <Divider hideOnMobile margin={20} />
@@ -49,17 +55,17 @@ const NavHeader: React.FC = () => {
       <InnerContainer>
         <MenuItems>
           <li>
-            <a>
+            <a href="#">
               <Image src={plusCircle} alt="Plus icon" />
             </a>
           </li>
           <li>
-            <a>
+            <a href="#">
               <Image src={AlertCircle} alt="Alert icon" />
             </a>
           </li>
           <li>
-            <a>
+            <a href="#">
               <Image src={Bell} alt="Bell icon" />
             </a>
           </li>

@@ -1,3 +1,5 @@
+import { Board } from "./board.model";
+
 export interface BoardCardProps {
-  profiles: number;
+  board: Board;
 }
