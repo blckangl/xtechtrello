@@ -43,3 +43,6 @@ export const ErrorMessage = styled("div")`
     text-align: center;
   }
 `;
+export const Container = styled.div`
+  display: flex;
+`;

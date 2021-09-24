@@ -7,7 +7,7 @@ import Head from "next/head";
 import BoardHeader from "components/board-header";
 import TaskList from "components/task-list";
 import { ErrorMessage } from "components/shared/styles";
-import { Container } from "./board.styles";
+import { Container } from "components/shared/styles";
 const BoardPage: NextPage<{ board: Board }> = ({ board }) => {
   const router = useRouter();
   const { id } = router.query;
