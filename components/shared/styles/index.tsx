@@ -43,6 +43,34 @@ export const ErrorMessage = styled("div")`
     text-align: center;
   }
 `;
-export const Container = styled.div`
-  display: flex;
+export const Wrapper = styled.div`
+  position: relative;
+  .container {
+    display: flex;
+    overflow-x: scroll;
+    /* position: absolute; */
+    bottom: 0;
+    top: 0;
+    left: 0;
+    height: calc(100vh - 120px);
+    ::-webkit-scrollbar {
+      width: 14px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f4f4f4;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: #a8a8a8;
+    }
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+      position: inherit;
+
+      height: 100%;
+    }
+  }
 `;

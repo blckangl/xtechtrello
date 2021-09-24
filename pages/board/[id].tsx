@@ -7,7 +7,7 @@ import Head from "next/head";
 import BoardHeader from "components/board-header";
 import TaskList from "components/task-list";
 import { ErrorMessage } from "components/shared/styles";
-import { Container } from "components/shared/styles";
+import { Wrapper } from "components/shared/styles";
 const BoardPage: NextPage<{ board: Board }> = ({ board }) => {
   const router = useRouter();
   const { id } = router.query;
@@ -22,11 +22,13 @@ const BoardPage: NextPage<{ board: Board }> = ({ board }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <BoardHeader board={board} />
-      <Container>
-        {board.sections.map((section) => {
-          return <TaskList boardSection={section} key={section._id} />;
-        })}
-      </Container>
+      <Wrapper>
+        <div className="container">
+          {board.sections.map((section) => {
+            return <TaskList boardSection={section} key={section._id} />;
+          })}
+        </div>
+      </Wrapper>
     </div>
   );
 };
