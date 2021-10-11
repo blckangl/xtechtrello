@@ -8,13 +8,24 @@ import { TaskType } from "components/shared/styles";
 import { Task } from "interfaces/task.model";
 import { capitalize } from "utils/string_utilities";
 const src = `https://via.placeholder.com/322`;
-const TaskCard: React.FC<{ task: Task }> = ({ task }) => {
+const TaskCard: React.FC<{ task: Task; sectionID: string }> = ({
+  task,
+  sectionID,
+}) => {
   useEffect(() => {
     eva.replace();
   }, []);
   console.log("task ", task);
   return (
-    <Card>
+    <Card
+      id={"task" + task._id}
+      draggable="true"
+      onDragStart={(ev) => {
+        ev.dataTransfer.setData("task", task._id);
+        ev.dataTransfer.setData("section", sectionID);
+        console.log(ev.dataTransfer.getData("task"));
+      }}
+    >
       <div className="header">
         {task.picture && (
           <Image

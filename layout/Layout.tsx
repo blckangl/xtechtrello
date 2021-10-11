@@ -1,5 +1,5 @@
 import NavHeader from "components/nav-header";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { normalize } from "styled-normalize";
 

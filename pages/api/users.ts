@@ -4,6 +4,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import bcrypt from "bcryptjs";
 import { User, UserModel } from "interfaces/user.model";
 import { Schema, model, connect, Error } from "mongoose";
+import { verifyToken } from "./middleware/auth";
 
 const saltRounds = 10;
 
@@ -23,8 +24,13 @@ const getUsers = async (
   res: NextApiResponse<IResponse>
 ) => {
   try {
+    const token = req?.headers?.authorization?.replace("Bearer ", "").trim();
+    const auth = verifyToken(token);
+    if (!auth) {
+      return res.status(401).send({ success: false, error: "Unauthorized" });
+    }
+    console.log(auth);
     const users: User[] = await UserModel.find();
-    console.log(users);
     return res.status(200).send({ success: true, body: users });
   } catch (error) {
     console.log(error);

@@ -10,6 +10,7 @@ import {
   SearchButton,
   SearchContainer,
   Title,
+  Actions,
 } from "./nav-header.styles";
 import { Divider } from "components/shared/styles";
 import Image from "next/image";
@@ -21,12 +22,17 @@ import AlertCircle from "public/images/alert-circle-outline@2x.png";
 import plusCircle from "public/images/plus-circle-outline@2x.png";
 import Search from "public/images/search-outline@2x.png";
 import TrelloMark from "public/images/trello-mark-blue@2x.png";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-
-const src = `https://via.placeholder.com/300`;
+import userService from "../../services/user.service";
+// @ts-ignore
+import * as eva from "eva-icons";
 
 const NavHeader: React.FC = () => {
+  useEffect(() => {
+    eva.replace();
+  }, []);
+  const [showActions, setShowActions] = useState(false);
   return (
     <Container>
       <LeftInnerContainer>
@@ -52,35 +58,79 @@ const NavHeader: React.FC = () => {
           </SearchButton>
         </SearchContainer>
       </LeftInnerContainer>
-      <InnerContainer>
-        <MenuItems>
-          <li>
-            <a href="#">
-              <Image src={plusCircle} alt="Plus icon" />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <Image src={AlertCircle} alt="Alert icon" />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <Image src={Bell} alt="Bell icon" />
-            </a>
-          </li>
-        </MenuItems>
-        <ProfileMenu href="#">
-          <Image
-            width="40"
-            height="40"
-            loader={() => src}
-            unoptimized={true}
-            src={src}
-            alt="profile picture"
-          />
-        </ProfileMenu>
-      </InnerContainer>
+      {userService.userValue && (
+        <InnerContainer>
+          <MenuItems>
+            <li>
+              <a href="#">
+                <Image src={plusCircle} alt="Plus icon" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <Image src={AlertCircle} alt="Alert icon" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <Image src={Bell} alt="Bell icon" />
+              </a>
+            </li>
+          </MenuItems>
+          <ProfileMenu
+            href="#"
+            onClick={(event) => {
+              setShowActions(!showActions);
+            }}
+          >
+            <Image
+              width="40"
+              height="40"
+              loader={() => userService.userValue.avatar}
+              unoptimized={true}
+              src={userService.userValue.avatar}
+              alt="profile picture"
+            />
+            {showActions ? (
+              <Actions>
+                <ul>
+                  <li
+                    onClick={() => {
+                      userService.logout();
+                    }}
+                  >
+                    <i
+                      data-eva-height="19"
+                      data-eva-fill="#929292"
+                      data-eva="close-circle-outline"
+                      data-eva-hover="true"
+                    />
+                    Logout
+                  </li>
+                </ul>
+              </Actions>
+            ) : (
+              ""
+            )}
+          </ProfileMenu>
+        </InnerContainer>
+      )}
+      {!userService.userValue && (
+        <InnerContainer>
+          <MenuItems>
+            <li>
+              <Link href="/login">
+                <a>Login</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/register">
+                <a>Register</a>
+              </Link>
+            </li>
+          </MenuItems>
+        </InnerContainer>
+      )}
     </Container>
   );
 };

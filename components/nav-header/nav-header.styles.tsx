@@ -102,6 +102,8 @@ export const MenuItems = styled.ul`
       margin-right: 14px;
     }
     a {
+      text-decoration: none;
+      color: black;
       img {
         width: 20px;
         height: 20px;
@@ -110,7 +112,36 @@ export const MenuItems = styled.ul`
   }
 `;
 export const ProfileMenu = styled.a`
+  position: relative;
   img {
     border-radius: 50%;
+  }
+`;
+export const Actions = styled.div`
+  position: absolute;
+  background: white;
+  padding: 11px;
+  right: 0;
+  z-index: 99;
+  position: absolute;
+  border: 2px solid #929292;
+  top: 43px;
+  border-radius: 9px;
+  border-top: none;
+
+  ul {
+    list-style: none;
+
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 12px;
+      color: #929292;
+      text-decoration: none;
+    }
+    li:hover {
+      color: #a8a8a8;
+    }
   }
 `;

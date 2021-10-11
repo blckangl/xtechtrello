@@ -8,6 +8,7 @@ import BoardHeader from "components/board-header";
 import TaskList from "components/task-list";
 import { ErrorMessage } from "components/shared/styles";
 import { Wrapper } from "components/shared/styles";
+import React from "react";
 const BoardPage: NextPage<{ board: Board }> = ({ board }) => {
   const router = useRouter();
   const { id } = router.query;

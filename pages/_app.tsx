@@ -1,8 +1,37 @@
 import type { AppProps } from "next/app";
+import { useRouter } from "next/router";
+import userService from "../services/user.service";
+
 import Layout from "layout/Layout";
 import Head from "next/head";
+import { useEffect, useState } from "react";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [authorized, setAuthorized] = useState(false);
+  const router = useRouter();
+
+  const isAuthenticated = (url: string) => {
+    const publicPaths = ["/login", "/register"];
+    const path = url.split("?")[0];
+    if (!userService.userValue && !publicPaths.includes(path)) {
+      setAuthorized(false);
+      router.push({
+        pathname: "/login",
+      });
+    } else {
+      setAuthorized(true);
+    }
+  };
+  useEffect(() => {
+    isAuthenticated(router.asPath);
+    const hideContent = () => setAuthorized(false);
+    router.events.on("routeChangeStart", hideContent);
+    router.events.on("routeChangeComplete", isAuthenticated);
+    return () => {
+      router.events.off("routeChangeStart", hideContent);
+      router.events.off("routeChangeComplete", isAuthenticated);
+    };
+  }, []);
   return (
     <div>
       <Head>
@@ -13,9 +42,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel="stylesheet"
         />
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      {authorized && (
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      )}
     </div>
   );
 }

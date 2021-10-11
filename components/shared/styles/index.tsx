@@ -74,3 +74,13 @@ export const Wrapper = styled.div`
     }
   }
 `;
+export const Alert = styled.div`
+  position: relative;
+  width: 100%;
+  padding: 16px;
+  margin: 6px;
+  background-color: #c62828;
+  color: white;
+  font-size: 10px;
+  text-align: center;
+`;

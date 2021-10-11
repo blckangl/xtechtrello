@@ -13,7 +13,17 @@ const BoardList: React.FC<BoardListProps> = ({ title, boards }) => {
   return (
     <Container>
       <Title>{capitalize(title)}</Title>
-      <List>
+      <List
+        ondrop={(ev) => {
+          ev.preventDefault();
+          let data = ev.dataTransfer.getData("text");
+          console.log("data", data);
+        }}
+        ondragover={(event) => {
+          event.preventDefault();
+          console.log("drag over");
+        }}
+      >
         {boards.map((board) => {
           return <BoardCard key={board._id} board={board} />;
         })}
